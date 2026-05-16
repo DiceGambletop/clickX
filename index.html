@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Click Counter</title>
+</head>
+<body>
+
+    <!-- Display starts at 0 -->
+    <h1 id="display">Clicks: 0</h1>
+
+    <!-- Button to add clicks -->
+    <button id="clickBtn">Click me</button>
+
+    <!-- Script handles the logic -->
+    <script>
+        let clicks = 0;
+
+        const button = document.getElementById("clickBtn");
+        const display = document.getElementById("display");
+
+        button.addEventListener("click", () => {
+            clicks += 1;
+            display.textContent = "Clicks: " + clicks;
+        });
+    </script>
+
+</body>
+</html>
