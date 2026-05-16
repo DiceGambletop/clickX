@@ -14,23 +14,22 @@
     </div>
   </nav>
 
+  <!-- Fixed counter (top-left, below navbar) -->
+  <div id="counter-display">Clicks: 0</div>
+
   <!-- Main content -->
   <article>
-    <h1 id="display">Clicks: 0</h1>
+    <h1>ClickX Universe</h1>
     <button id="clickBtn" class="click-button">Click me</button>
+
+    <!-- Upgrade section -->
+    <div class="upgrade-container">
+      <button id="upgradeBtn" class="upgrade-button">
+        Slight Improvement (+100% Clicks)
+      </button>
+    </div>
   </article>
 
-  <!-- Script -->
-  <script>
-    let clicks = 0;
-    const button = document.getElementById("clickBtn");
-    const display = document.getElementById("display");
-
-    button.addEventListener("click", () => {
-      clicks += 1;
-      display.textContent = "Clicks: " + clicks;
-    });
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
