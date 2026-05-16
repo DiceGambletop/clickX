@@ -1,29 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Click Counter</title>
+  <meta charset="UTF-8">
+  <title>ClickX Counter</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Display starts at 0 -->
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-container">
+      <a href="/" class="nav-logo">DICE GAMBLETOP</a>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <article>
     <h1 id="display">Clicks: 0</h1>
+    <button id="clickBtn" class="click-button">Click me</button>
+  </article>
 
-    <!-- Button to add clicks -->
-    <button id="clickBtn">Click me</button>
+  <!-- Script -->
+  <script>
+    let clicks = 0;
+    const button = document.getElementById("clickBtn");
+    const display = document.getElementById("display");
 
-    <!-- Script handles the logic -->
-    <script>
-        let clicks = 0;
-
-        const button = document.getElementById("clickBtn");
-        const display = document.getElementById("display");
-
-        button.addEventListener("click", () => {
-            clicks += 1;
-            display.textContent = "Clicks: " + clicks;
-        });
-    </script>
+    button.addEventListener("click", () => {
+      clicks += 1;
+      display.textContent = "Clicks: " + clicks;
+    });
+  </script>
 
 </body>
 </html>
