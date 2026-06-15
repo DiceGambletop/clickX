@@ -1,39 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>ClickX Counter</title>
-  <link rel="stylesheet" href="style.css">
+  <!-- ...existing content... -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fragment Forge</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+  <!-- ...existing content... -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+    }
+  }
+  </script>
 </head>
 <body>
-
-  <!-- Navbar -->
-  <nav>
-    <div class="nav-container">
-      <a href="/" class="nav-logo">DICE GAMBLETOP</a>
+  <!-- ...existing content... -->
+  <div id="app">
+    <header class="topbar">
+      <div class="brand">Fragment Forge</div>
+      <div class="stats">
+        <div class="stat">
+          <span class="label">Fragments</span>
+          <span id="fragments" class="value">0</span>
+        </div>
+        <div class="stat">
+          <span class="label">Per Click</span>
+          <span id="perClick" class="value">1</span>
+        </div>
+        <div class="stat">
+          <span class="label">Per Sec</span>
+          <span id="perSec" class="value">0</span>
+        </div>
+        <div class="stat">
+          <span class="label">Shards</span>
+          <span id="shards" class="value">0</span>
+        </div>
+      </div>
+      <div class="actions">
+        <button id="resetBtn" class="ghost">Reset</button>
+      </div>
+    </header>
+    <div class="goal-progress" aria-label="Progress to 1 billion fragments">
+      <div id="progressFill" class="goal-fill" style="width:0%"></div>
+      <div class="goal-label"><span id="progressText">0% to 1B</span></div>
     </div>
-  </nav>
 
-  <!-- Fixed counter -->
-  <div id="counter-display">Clicks: 0</div>
+    <main class="layout">
+      <section class="scene-wrap">
+        <canvas id="webgl"></canvas>
+        <div id="floaters"></div>
+        <button id="clickOverlay" aria-label="Click cube"></button>
+        <div id="sceneTooltip" class="scene-tooltip" style="display:none;"></div>
+      </section>
+      <aside class="store">
+        <h2>Upgrades</h2>
+        <div id="upgrades" class="upgrades"></div>
+        <h2 id="fuHeader" style="display:none;">Fragmented Upgrades</h2>
+        <div id="fus" class="upgrades" style="display:none;"></div>
+        <h2>Perks</h2>
+        <div id="perks" class="upgrades"></div>
+      </aside>
+    </main>
 
-  <!-- Main content -->
-  <article>
-    <h1>ClickX Universe</h1>
-    <button id="clickBtn" class="click-button">Click me</button>
-
-    <!-- Upgrade section -->
-    <div class="upgrade-container">
-      <h2>Upgrades</h2>
-      <button id="upgradeSlight" class="upgrade-button">
-        Slight Improvement (+80% per purchase) — Cost: 25 Clicks
-      </button>
-      <button id="upgradeCompound" class="upgrade-button">
-        Compounding Results (x1.2 compounding, doubles each purchase) — Cost: 250 Clicks
-      </button>
-    </div>
-  </article>
-
-  <script src="script.js"></script>
+    <footer class="footer">
+      <span>Autosaves every few seconds. Click the cube to forge fragments.</span>
+    </footer>
+  </div>
+  <!-- ...existing content... -->
+  <script type="module" src="./main.js"></script>
 </body>
 </html>
